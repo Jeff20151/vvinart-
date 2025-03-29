@@ -2,26 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&display=swap');
+
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-rgb: 240, 208, 211;
+  --accent-color: 145, 89, 98;
+  --accent-light: 211, 166, 177;
+  --accent-dark: 87, 54, 59;
+  --text-color: 34, 34, 34;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 700;
+  }
+  
+  body {
+    font-family: 'Noto Serif TC', serif;
+  }
+}
+
+@layer components {
+  .art-button {
+    @apply px-6 py-2 bg-[rgb(var(--accent-color))] text-white rounded-none transition-all hover:bg-[rgb(var(--accent-dark))] hover:shadow-md;
+  }
+
+  .art-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .art-card {
+    @apply bg-white rounded-none overflow-hidden shadow-sm hover:shadow-md transition-shadow;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--text-color));
+  background-color: rgb(var(--background-rgb));
 }

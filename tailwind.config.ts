@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        mingtc: ['Noto Serif TC', 'serif'],
+      },
+      colors: {
+        accent: 'rgb(var(--accent-color) / <alpha-value>)',
+        'accent-light': 'rgb(var(--accent-light) / <alpha-value>)',
+        'accent-dark': 'rgb(var(--accent-dark) / <alpha-value>)',
+        background: 'rgb(var(--background-rgb) / <alpha-value>)',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
